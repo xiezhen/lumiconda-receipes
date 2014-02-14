@@ -1,0 +1,19 @@
+package:
+  name: xerces-c
+  version: 2.8.0
+
+source: 
+  fn: xerces-c-2.8.0-cms.tar.gz
+  url: http://archive.apache.org/dist/xml/xerces-c/sources/xerces-c-src_2_8_0.tar.gz
+  md5: 5daf514b73f3e0de9e3fce704387c0d2
+
+build:
+  number: 0  [linux64]
+
+about:
+  home: http://xerces.apache.org/
+  license: http://www.apache.org/licenses/LICENSE-2.0
+
+
+
+

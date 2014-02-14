@@ -1,0 +1,25 @@
+package:
+  name: frontier_client
+  version: 2.8.10
+
+source: 
+  fn: frontier_client__2.8.10__src.tar.gz
+  url: http://frontier.cern.ch/dist/frontier_client__2.8.10__src.tar.gz
+  md5: f08416bcf90223d261fb17cea923b1cf
+
+build:
+  number: 0
+  
+requirements:
+  build: 
+    - expat
+    - pacparser
+
+  run:
+    - expat
+
+about:
+  home: http://frontier.cern.ch/
+  license: BSD license
+
+
