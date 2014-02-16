@@ -1,0 +1,25 @@
+package:
+  name: coral
+  version: 2.3.28
+
+source: 
+  git_url: git@github.com:xiezhen/coralbuilder.git
+
+build:
+  number: 0
+  
+requirements:
+  build: 
+    - boost
+    - xerces-c
+    - oracleclientlite
+    - frontier_client
+
+  run:
+
+
+about:
+  home: 
+  license: 
+
+
