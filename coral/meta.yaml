@@ -1,15 +1,17 @@
 package:
   name: coral
-  version: 2.3.28
+  version: 2.4.1
 
 source: 
   git_url: git@github.com:xiezhen/coralbuilder.git
-  git_tag: v0.1
+  git_tag: v0.3
+
 build:
   number: 0
   
 requirements:
   build: 
+    - boost
     - xerces-c
     - oraclesdk
     - oracleclientlite
