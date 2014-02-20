@@ -1,0 +1,29 @@
+package:
+  name: root
+  version: 5.99.05
+
+source: 
+  git_url: https://github.com/root-mirror/root.git
+  git_tag: v5-99-05
+build:
+  number: 0
+  
+requirements:
+  build: 
+    - jpeg
+    - libtiff
+    - libpng
+    - pcre
+    - libxml2
+    - openssl
+    - zlib
+    - python
+    - xz
+  run:
+
+
+about:
+  home: http://root.cern.ch
+  license: LGPL 
+
+

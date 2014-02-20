@@ -1,0 +1,16 @@
+package:
+  name: xz
+  version: 5.0.5
+
+source: 
+  fn: xz-5.0.5.tar.bz2
+  url: http://tukaani.org/xz/xz-5.0.5.tar.bz2
+
+build:
+  number: 0
+
+about:
+  home: http://tukaani.org/xz/
+
+
+
