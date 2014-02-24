@@ -11,17 +11,22 @@ sed -ibak 's/\-std=c++11/-std=c++0x/g' \
   config/Makefile.linuxx8664gcc 
 
 export LZMA=${PREFIX}
-export LIBJPG_ROOT=${PREFIX}
-export LIBPNG_ROOT=${PREFIX}
-export ZLIB_ROOT=${PREFIX}
-export LIBTIFF_ROOT=${PREFIX}
-export LIBUNGIF_ROOT=${PREFIX}
-export ROOTSYS=${PREFIX}
+export LIBJPEG=${PREFIX}
+export LIBPNG=${PREFIX}
+export ZLIB=${PREFIX}
+export LIBTIFF=${PREFIX}
 
-./configure linuxx8664gcc --prefix=${PREFIX} \
+./configure linuxx8664gcc --nohowto --fail-on-missing \
 --enable-table \
+--enable-asimage \
 --enable-minuit2 \
+--enable-astiff \
 --disable-builtin-lzma \
+--disable-builtin-freetype \
+--disable-builtin-glew \
+--disable-builtin-pcre \
+--disable-builtin-zlib \
+--enable-builtin-afterimage \
 --disable-castor \
 --disable-chirp \
 --disable-cocoa \
@@ -46,13 +51,12 @@ export ROOTSYS=${PREFIX}
 --disable-afdsmgrd \
 --disable-afs \
 --disable-alien \
---disable-asimage \
 --disable-bonjour \
 --disable-ldap \
 --disable-krb5 \
 --disable-xrootd \
 --disable-odbc \
---disable-astiff \
+--disable-sqlite \
 --disable-pgsql \
 --disable-mysql \
 --disable-pythia6 \
@@ -70,28 +74,24 @@ export ROOTSYS=${PREFIX}
 --disable-tmva \
 --disable-xft \
 --disable-unuran \
+--disable-vc \
+--disable-xml \
 --with-cxx=g++ \
 --with-cc=gcc \
 --with-ld=g++ \
---gminimal \
 --with-ssl-incdir=${PREFIX}/include --with-ssl-libdir=${PREFIX}/lib \
 --enable-python --with-python-libdir=${PREFIX}/lib --with-python-incdir=${PREFIX}/include/python${PY_VER} 
 
-make -j 8 CXX="g++" CC="gcc"
+make -j2 CXX="g++" CC="gcc" 
 
-make install
-
-mv ${PREFIX}/lib/root/libPyROOT.so  ${PREFIX}/lib/python${PY_VER}/
-
-find ${PREFIX}/lib/root -name "*.py*" -print | while read filename
-do
-   mv "${filename}" ${PREFIX}/lib/python${PY_VER}/
-done
-
-find ${PREFIX}/lib/root -name "*libProof*" -print | while read filename
-do
-    rm "${filename}"
-done
+mkdir -vp ${PREFIX}/root
+cp -rf ${SRC_DIR}/bin ${PREFIX}/root
+cp -rf ${SRC_DIR}/include ${PREFIX}/root
+cp -rf ${SRC_DIR}/lib ${PREFIX}/root
+cp -rf ${SRC_DIR}/icons ${PREFIX}/root
+cp -rf ${SRC_DIR}/fonts ${PREFIX}/root
+cp -rf ${SRC_DIR}/macros ${PREFIX}/root
+cp -rf ${SRC_DIR}/etc ${PREFIX}/root
 
 # See
 # http://docs.continuum.io/conda/build.html
