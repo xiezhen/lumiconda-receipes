@@ -13,8 +13,11 @@ requirements:
     - jpeg
     - libtiff
     - libpng
+    - libx11
+    - libxft
+    - libxext
+    - libxpm
     - pcre
-    - libxml2
     - openssl
     - zlib
     - python
