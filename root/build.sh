@@ -1,15 +1,5 @@
 #!/bin/bash
 
-# Add support for GCC 4.6
-sed -ibak 's/\-std=c++11/-std=c++0x/g' \
-  configure \
-  Makefile \
-  config/Makefile.macosx64 \
-  config/Makefile.macosx \
-  config/Makefile.linux \
-  config/root-config.in \
-  config/Makefile.linuxx8664gcc 
-
 export LZMA=${PREFIX}
 export LIBJPEG=${PREFIX}
 export LIBPNG=${PREFIX}
@@ -21,6 +11,8 @@ export LIBTIFF=${PREFIX}
 --enable-asimage \
 --enable-minuit2 \
 --enable-astiff \
+--enable-x11 \
+--enable-xft \
 --disable-builtin-lzma \
 --disable-builtin-freetype \
 --disable-builtin-glew \
@@ -72,17 +64,20 @@ export LIBTIFF=${PREFIX}
 --disable-sapdb \
 --disable-winrtdebug \
 --disable-tmva \
---disable-xft \
 --disable-unuran \
 --disable-vc \
 --disable-xml \
 --with-cxx=g++ \
 --with-cc=gcc \
 --with-ld=g++ \
+--with-x11-libdir=$PREFIX/lib \
+--with-xpm-libdir=$PREFIX/lib \
+--with-xft-libdir=$PREFIX/lib \
+--with-xext-libdir=$PREFIX/lib \
 --with-ssl-incdir=${PREFIX}/include --with-ssl-libdir=${PREFIX}/lib \
---enable-python --with-python-libdir=${PREFIX}/lib --with-python-incdir=${PREFIX}/include/python${PY_VER} 
+--enable-python --with-python-libdir=${PREFIX}/lib --with-python-incdir=${PREFIX}/include/python${PY_VER}
 
-make -j2 CXX="g++" CC="gcc" 
+make CXX="g++" CC="gcc"
 
 mkdir -vp ${PREFIX}/root
 cp -rf ${SRC_DIR}/bin ${PREFIX}/root
