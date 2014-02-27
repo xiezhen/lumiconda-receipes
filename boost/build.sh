@@ -21,6 +21,7 @@ export CXXFLAGS="${CFLAGS}"
 --without-graph \
 --without-graph_parallel \
 --without-test \
+link=shared \
 threading=multi \
 install;
 
