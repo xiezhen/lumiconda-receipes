@@ -1,10 +1,10 @@
 package:
   name: coral
-  version: 2.4.1
+  version: 2.4.2
 
 source: 
   git_url: git@github.com:xiezhen/coralbuilder.git
-  git_tag: v0.3
+  git_tag: v0.6
 
 build:
   number: 0
