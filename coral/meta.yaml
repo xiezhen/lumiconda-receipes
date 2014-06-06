@@ -4,7 +4,7 @@ package:
 
 source: 
   git_url: git@github.com:xiezhen/coralbuilder.git
-  git_tag: v0.6
+  git_tag: v0.7
 
 build:
   number: 0
