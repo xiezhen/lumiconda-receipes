@@ -1,0 +1,33 @@
+package:
+  name: schema
+  version: !!str 0.3.1
+
+source:
+  fn: schema-0.3.1.tar.gz
+  url: https://pypi.python.org/packages/source/s/schema/schema-0.3.1.tar.gz
+  md5: 241d4f8211ebab33bc28be90a300cb58
+# patches:
+  # # List any patch files here
+  # # - fix.patch
+ 
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python
+ 
+test:
+  # Python imports
+  imports:
+    - schema
+
+about:
+  home: http://github.com/halst/schema 
+  license: MIT License
+  summary: a library for validating Python data structures, such as those obtained from config-files, forms, external services or command-line parsing, converted from JSON/YAML (or something else) to Python data-types. 
+
+# See
+# # http://docs.continuum.io/conda/build.html for
+# # more information about meta.yaml
