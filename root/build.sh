@@ -1,18 +1,25 @@
 #!/bin/bash
 
+mkdir -vp ${PREFIX}/bin
+mkdir -vp ${PREFIX}/root
+
 export LZMA=${PREFIX}
 export LIBJPEG=${PREFIX}
 export LIBPNG=${PREFIX}
 export ZLIB=${PREFIX}
 export LIBTIFF=${PREFIX}
 
-./configure linuxx8664gcc --nohowto --fail-on-missing \
+
+ARCH="$(uname 2>/dev/null)"
+
+export XORG=/usr/lib64
+if [ "$ARCH" == "Darwin" ];then
+    export XORG=/opt/X11/lib
+fi
+
+./configure ${ARCH,,*}x8664gcc --nohowto --fail-on-missing \
 --enable-table \
---enable-asimage \
 --enable-minuit2 \
---enable-astiff \
---enable-x11 \
---enable-xft \
 --disable-builtin-lzma \
 --disable-builtin-freetype \
 --disable-builtin-glew \
@@ -30,7 +37,6 @@ export LIBTIFF=${PREFIX}
 --disable-fftw3 \
 --disable-fitsio \
 --disable-gviz \
---disable-geocad \
 --disable-gdml \
 --disable-gfal \
 --disable-globus \
@@ -70,16 +76,16 @@ export LIBTIFF=${PREFIX}
 --with-cxx=g++ \
 --with-cc=gcc \
 --with-ld=g++ \
---with-x11-libdir=$PREFIX/lib \
---with-xpm-libdir=$PREFIX/lib \
---with-xft-libdir=$PREFIX/lib \
---with-xext-libdir=$PREFIX/lib \
---with-ssl-incdir=${PREFIX}/include --with-ssl-libdir=${PREFIX}/lib \
---enable-python --with-python-libdir=${PREFIX}/lib --with-python-incdir=${PREFIX}/include/python${PY_VER}
+--with-x11-libdir=${XORG} \
+--with-xpm-libdir=${XORG} \
+--with-xft-libdir=${XORG} \
+--with-xext-libdir=${XORG} \
+--with-ssl-incdir=${PREFIX}/include/openssl --with-ssl-libdir=${PREFIX}/lib --with-ssl-shared=yes \
+--enable-python --with-python-libdir=${PREFIX}/lib --with-python-incdir=${PREFIX}/include/python${PY_VER} 
 
-make CXX="g++" CC="gcc"
+make CXX="g++" CC="gcc";
+#make install;
 
-mkdir -vp ${PREFIX}/root
 cp -rf ${SRC_DIR}/bin ${PREFIX}/root
 cp -rf ${SRC_DIR}/include ${PREFIX}/root
 cp -rf ${SRC_DIR}/lib ${PREFIX}/root
