@@ -1,0 +1,18 @@
+package:
+  name: sqlalchemy_frontier
+  version: !!str 0.2
+
+source:
+  git_url: git@github.com:xiezhen/sqlalchemy_frontier.git
+  git_tag: 0.2
+
+build:
+  number: 0
+
+requirements:
+  build:      
+    - sqlalchemy
+    - cx_oracle
+    - frontier_client
+    - python
+
