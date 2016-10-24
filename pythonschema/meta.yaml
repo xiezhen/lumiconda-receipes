@@ -17,7 +17,10 @@ requirements:
 
   run:
     - python
- 
+
+build:
+  number: 2
+      
 test:
   # Python imports
   imports:

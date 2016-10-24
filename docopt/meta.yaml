@@ -10,7 +10,10 @@ source:
 # patches:
   # # List any patch files here
   # # - fix.patch
- 
+
+build:
+  number: 2
+
 requirements:
   build:
     - python
