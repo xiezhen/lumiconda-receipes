@@ -1,0 +1,10 @@
+--- __init__.py.orig	2016-10-25 19:24:51.228579337 +0200
++++ __init__.py	2016-10-25 19:25:09.495732485 +0200
+@@ -6,6 +6,7 @@
+ # the MIT License: http://www.opensource.org/licenses/mit-license.php
+ 
+ from sqlalchemy.dialects.oracle import base, cx_oracle, zxjdbc
++from sqlalchemy.dialects.oracle import frontier
+ 
+ base.dialect = cx_oracle.dialect
+ 
