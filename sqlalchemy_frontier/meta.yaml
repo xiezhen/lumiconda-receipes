@@ -1,12 +1,12 @@
 package:
   name: sqlalchemy_frontier
-  version: !!str 0.3
+  version: !!str 0.3.1
 
 source:
   git_url: git@github.com:xiezhen/sqlalchemy_frontier.git
-  git_tag: 0.3
-  patches:
-    - dialect_oracle_init.patch
+  git_tag: 0.3.1
+#  patches:
+#    - dialect_oracle_init.patch
     
 build:
   number: 0
