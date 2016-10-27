@@ -1,3 +1,3 @@
 #!/bin/bash
 
-$PYTHON setup.py install --prefix $SP_DIR/sqlalchemy --force
+$PYTHON setup.py install --prefix $SP_DIR/sqlalchemy 
