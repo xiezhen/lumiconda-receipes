@@ -11,8 +11,8 @@ build:
 
 requirements:
   build:      
-    - sqlalchemy
-    - cx_oracle
-    - frontier_client
-    - python
+    - sqlalchemy 1.1.3
+    - cx_oracle 5.1.2
+    - frontier_client 2.8.*
+    - python 
 
