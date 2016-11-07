@@ -8,15 +8,12 @@ source:
   md5: 51acddfd70c1bd77c13d2ef03538638d
 
 build:
-  number: 1
+  number: 2
   
 requirements:
   build: 
     - expat
     - pacparser
-
-  run:
-    - expat
 
 about:
   home: http://frontier.cern.ch/
