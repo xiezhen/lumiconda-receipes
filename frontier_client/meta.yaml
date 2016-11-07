@@ -7,12 +7,13 @@ source:
   url: http://frontier.cern.ch/dist/frontier_client__2.8.20__src.tar.gz
   md5: e2ea893b02eab539a0cf6a3812f4937c
 build:
-  number: 0
+  number: 1
   
 requirements:
   build: 
     - expat
     - pacparser
+    - openssl
 
 about:
   home: http://frontier.cern.ch/
