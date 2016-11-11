@@ -3,20 +3,20 @@ package:
   version: 5.99.05
 
 source: 
-  git_url: https://github.com/root-mirror/root.git
-  git_tag: v5-99-05
+  fn: root_v5.99.05.source.tar.gz
+  url: https://root.cern.ch/download/root_v5.99.05.source.tar.gz
 build:
-  number: 0
+  number: 1
   
 requirements:
   build: 
     - jpeg
     - libtiff
     - libpng
-    - pcre
-    - openssl
-    - zlib
-    - python
+    - pcre 
+    - openssl 1.0.2h
+    - zlib 1.2.8
+    - python 2.7.12
     - xz
   run:
 
